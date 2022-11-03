@@ -1,153 +1,104 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="value"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Employee Registration</title>
+<title>Employee Details</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
 <style>
-.gradient-custom {
-	/* fallback for old browsers */
-	background: #f093fb;
-	/* Chrome 10-25, Safari 5.1-6 */
-	background: -webkit-linear-gradient(to bottom right, rgba(240, 147, 251, 1),
-		rgba(245, 87, 108, 1));
-	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	background: linear-gradient(to bottom right, rgba(240, 147, 251, 1),
-		rgba(245, 87, 108, 1))
+style>form {
+	text-align: center;
+	width: 20%;
 }
 
-.card-registration .select-input.form-control[readonly]:not([disabled])
-	{
-	font-size: 1rem;
-	line-height: 2.15;
-	padding-left: .75em;
-	padding-right: .75em;
+body {
+	margin-top: 8%;
 }
 
-.card-registration .select-arrow {
-	top: 13px;
+#body {
+	text-align: center;
+	padding-left: 500px;
+	padding-right: 400px;
+	padding-top: 45px;
+}
+
+h2 {
+	text-align: center;
+	padding-top: 10px;
+	margin-left: 8%;
+}
+
+button {
+	width: 15%;
 }
 </style>
+
+
 </head>
 <body>
+	<%@include file="AdminDashboard.jsp"%>
+	<h2>Add Employee Details</h2>
+	<div id="body">
+		<form action="/addemployee" method="post" modelAttribute="employeedetails">
 
-	<section class="vh-100 gradient-custom">
-		<div class="container py-5 h-100">
-			<div class="row justify-content-center align-items-center h-100">
-				<div class="col-12 col-lg-9 col-xl-7">
-					<div class="card shadow-2-strong card-registration"
-						style="border-radius: 15px;">
-						<div class="card-body p-4 p-md-5">
-							<h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
-							<form  action="/employee" method="post">
-
-								<div class="row">
-									<div class="col-md-6 mb-4">
-
-										<div class="form-outline">
-											<input type="text" id="firstName"
-												class="form-control form-control-lg" /> <label
-												class="form-label" for="firstName">First Name</label>
-										</div>
-
-									</div>
-									<div class="col-md-6 mb-4">
-
-										<div class="form-outline">
-											<input type="text" id="lastName"
-												class="form-control form-control-lg" /> <label
-												class="form-label" for="lastName">Password</label>
-										</div>
-
-									</div>
-								</div>
-
-								<div class="row">
-									<div class="col-md-6 mb-4 d-flex align-items-center">
-
-										<div class="form-outline datepicker w-100">
-											<input type="text" class="form-control form-control-lg"
-												id="birthdayDate" /> <label for="birthdayDate"
-												class="form-label">Birthday</label>
-										</div>
-
-									</div>
-									<div class="col-md-6 mb-4">
-
-										<h6 class="mb-2 pb-1">Gender:</h6>
-
-										<div class="form-check form-check-inline">
-											<input class="form-check-input" type="radio"
-												name="inlineRadioOptions" id="femaleGender" value="option1"
-												checked /> <label class="form-check-label"
-												for="femaleGender">Female</label>
-										</div>
-
-										<div class="form-check form-check-inline">
-											<input class="form-check-input" type="radio"
-												name="inlineRadioOptions" id="maleGender" value="option2" />
-											<label class="form-check-label" for="maleGender">Male</label>
-										</div>
-
-										<div class="form-check form-check-inline">
-											<input class="form-check-input" type="radio"
-												name="inlineRadioOptions" id="otherGender" value="option3" />
-											<label class="form-check-label" for="otherGender">Other</label>
-										</div>
-
-									</div>
-								</div>
-
-								<div class="row">
-									<div class="col-md-6 mb-4 pb-2">
-
-										<div class="form-outline">
-											<input type="email" id="emailAddress"
-												class="form-control form-control-lg" /> <label
-												class="form-label" for="emailAddress">Email</label>
-										</div>
-
-									</div>
-									<div class="col-md-6 mb-4 pb-2">
-
-										<div class="form-outline">
-											<input type="tel" id="phoneNumber"
-												class="form-control form-control-lg" /> <label
-												class="form-label" for="phoneNumber">Phone Number</label>
-										</div>
-
-									</div>
-								</div>
-
-								<div class="row">
-									<div class="col-12">
-
-										<select class="select form-control-lg">
-											<option value="1" disabled>Choose Designation</option>
-											<option value="2">Subject 1</option>
-											<option value="3">Subject 2</option>
-											<option value="4">Subject 3</option>
-										</select> <label class="form-label select-label">Choose option</label>
-
-									</div>
-								</div>
-
-								<div class="mt-4 pt-2">
-									<input class="btn btn-primary btn-lg" type="submit"
-										value="Submit" />
-								</div>
-
-							</form>
-						</div>
-					</div>
-				</div>
+			<div class="form-outline mb-4">
+				<input type="text" name="employee_name" id="form4Example1"
+					class="form-control" /> <label class="form-label"
+					for="form4Example1"> Employee Name</label>
 			</div>
-		</div>
-	</section>
+
+			<div class="form-outline mb-4">
+	
+				<select name="designation" id="form4Example1" class="form-control">
+					<option value="" disabled>Select Employee Designation</option>
+					<option value="Billing Clerk">Billing Clerk</option>
+					<option value="Sales Executive">Sales Executive</option>
+					<option value="Sweeper"> Sweeper<option>
+					<option value="Watch Man">Watch Man</option>
+					<option value="Driver">Driver</option>
+				</select> <label class="form-label" for="form4Example1">Employee Designation</label>	
+			</div>
+
+			<div class="form-outline mb-4">
+				<input type="date" name="dateOfBirth" value=""
+					id="form4Example1" class="form-control" /> <label
+					class="form-label" for="form4Example1">Date of Birth</label>
+			</div>
+
+			<div class="form-outline mb-4">
+				<input type="date" name="dateofjoining" value="" id="form4Example1"
+					class="form-control" /> <label class="form-label"
+					for="form4Example1"> Joining Date </label>
+			</div>
+
+			<div class="form-outline mb-4">
+				<input type="text" name="salary" id="form4Example1"
+					class="form-control" /> <label class="form-label"
+					for="form4Example1"> Salary</label>
+			</div>
+            <div class="form-outline mb-4">
+				<input type="number" name="mobile_number" id="form4Example1"
+					class="form-control" /> <label class="form-label"
+					for="form4Example1"> Mobile Number</label>
+			</div>
+			
+			<div class="form-outline mb-4">
+				<input type="text" name="address" id="form4Example1"
+					class="form-control" /> <label class="form-label"
+					for="form4Example1"> Address</label>
+			</div>
+			
+ 
+
+			<button type="submit" class="btn btn-primary btn-block mb-4">Add
+				Employee</button>
+		</form>
+	</div>
 </body>
+
 </html>

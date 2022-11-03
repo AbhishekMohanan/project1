@@ -93,18 +93,16 @@ b {
 <%@include file="AdminDashboard.jsp"%>
 <div class="container my-2">
 	<div class = "h1">
-		<h1 id="h1">Welcome Admin !!!</h1>
-		<br> <a href= class="btn btn-primary btn-sm mb-3" > Add
-			Supplier </a>
+		<h1 id="h1">Welcome Admin  ${sess}!!!</h1>
 </div>
 
 	<div class="main_card">
 <div class="card">
     <p><b>Employees Details </b></p> 
-    <div class="part2"> <a href="/ "> <img src="LoginStyle/images/boy.png" alt="Avatar" style="width:70%"></a>
+    <a href="/viewemployee "><div class="part2">  <img src="LoginStyle/images/boy.png" alt="Avatar" style="width:70%">
   <h4><b></b></h4> 
     </div>
-</div>
+</div></a>
 	<div class="card card1">
     <p><b>Supplier List</b></p> 
     <div class="part2"> <a href="/ "><img src="LoginStyle/images/shopping-basket.png" alt="Avatar" style="width:70%"></a>

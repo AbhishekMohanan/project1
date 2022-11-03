@@ -48,7 +48,7 @@ button {
 
 
 			<div class="form-outline mb-4">
-				<label class="form-label" for="form4Example1"> Supplier Name</label>
+				<label class="form-label" for="form4Example1"> Supplier ID</label>
 				<select name="supplierId" id="form4Example1" class="form-control">
 					<value:forEach var="details2" items="${supplierdetails}">
 						<option>${details2.getSupplierId()}</option>

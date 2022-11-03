@@ -65,7 +65,7 @@ button {
 
 			<div class="form-outline mb-4">
 
-				<select name="companyName" id="form4Example1" class="form-control">
+				<select name="category_name" id="form4Example1" class="form-control">
 					<option value="">Select Category Name</option>
 					<value:forEach var="category" items="${categorydetails}">
 						<option>${category.getCategory_name()}</option>

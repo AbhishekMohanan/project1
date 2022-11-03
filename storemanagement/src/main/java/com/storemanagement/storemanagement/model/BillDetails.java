@@ -21,56 +21,57 @@ public class BillDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int billDetailId;
-	@Column(name = "quantity")
 	private int quantity;
-	@Column(name = "amount")
 	private int amount;
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = " bill_no")
-	// List<Bill> bill;
-	Bill bill;
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "product_id")
-	Product product;
-
-	public Product getProduct() {
-		return product;
-	}
-
-	public void setProduct(Product product) {
-		this.product = product;
-	}
-
+	private int product_id;
+	private String category_name;
+	private String companyName;
+	private String product_name;
+	
 	public int getBillDetailId() {
 		return billDetailId;
 	}
-
 	public void setBillDetailId(int billDetailId) {
 		this.billDetailId = billDetailId;
 	}
-
-	public Bill getBill() {
-		return bill;
-	}
-
-	public void setBill(Bill bill) {
-		this.bill = bill;
-	}
-
 	public int getQuantity() {
 		return quantity;
 	}
-
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-
 	public int getAmount() {
 		return amount;
 	}
-
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
+	public int getProduct_id() {
+		return product_id;
+	}
+	public void setProduct_id(int product_id) {
+		this.product_id = product_id;
+	}
+	public String getCategory_name() {
+		return category_name;
+	}
+	public void setCategory_name(String category_name) {
+		this.category_name = category_name;
+	}
+	public String getCompanyName() {
+		return companyName;
+	}
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+	public String getProduct_name() {
+		return product_name;
+	}
+	public void setProduct_name(String product_name) {
+		this.product_name = product_name;
+	}
+	
+	
 
+	
 }

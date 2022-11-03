@@ -93,9 +93,7 @@ b {
 <%@include file="Dashboard.jsp"%>
 <div class="container my-2">
 	<div class = "h1">
-		<h1 id="h1">Welcome Admin!!!</h1>
-		<br> <a href= class="btn btn-primary btn-sm mb-3" > Add
-			Supplier </a>
+		<h1 id="h1">Welcome ${sess}!!!</h1>
 </div>
 
 	<div class="main_card">

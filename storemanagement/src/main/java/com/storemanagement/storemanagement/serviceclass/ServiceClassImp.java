@@ -38,6 +38,11 @@ public class ServiceClassImp implements ServiceClass {
 		return myRepository.findById(supplierId).get();
 	}
 
+	@Override
+	public int update(int supplierId, String supplierName, String mobileNo) {
+	return myRepository.update(supplierId, supplierName, mobileNo);
+	}
+
 //	@Override
 //	public int update(int supplier_id, String supplier_name, String mobile_no) {
 //		return myRepository.update(supplier_id, supplier_name, mobile_no);

@@ -53,6 +53,10 @@
 					<li class="item"><a href="/ViewProductDetails" class="menu-btn"> <i
 						class="fab fa-product-hunt" ></i><span>Products</span>
 				</a></li>
+				
+					<li class="item"><a href="/bill" class="menu-btn"> <i
+						class="	fas fa-hand-holding-usd" ></i><span>Billing</span>
+				</a></li>
 					
 			</div>
 		</div>

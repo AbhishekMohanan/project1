@@ -54,15 +54,15 @@ margin-top:8%;
 
 
 			<div class="form-outline mb-4">
-				<input type="text" name="student_name"
-					value="${Editdetails.getSupplier_name()}" id="form4Example1"
+				<input type="text" name="supplierName"
+					value="${Editdetails.getSupplierName()}" id="form4Example1"
 					class="form-control" /> <label class="form-label"
 					for="form4Example1">Supplier_ Name</label>
 			</div>
 			
 				<div class="form-outline mb-4">
-				<input type="text" name="student_name"
-					value="${Editdetails.getMobile_no()}" id="form4Example1"
+				<input type="text" name="mobileNo"
+					value="${Editdetails.getMobileNo()}" id="form4Example1"
 					class="form-control" /> <label class="form-label"
 					for="form4Example1">Supplier Mobile Number</label>
 			</div>

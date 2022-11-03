@@ -17,84 +17,51 @@ import javax.persistence.Table;
 public class Employee {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int employee_id;
-	@Column(name="employeeName")
+	private int employeeid;
 	private String employee_name;
-	@Column(name="doj")
-	private Date doj;
-	@Column(name="salary")
+	private Date dateofjoining;
 	private int salary;
-	@Column(name="designation")
 	private String designation;
-	@Column(name="mobileNo")
 	private String mobile_number;
-	@Column(name="address")
 	private String address;
-	@Column(name="dateOfBirth")
 	private String dateOfBirth;
-	@OneToMany(mappedBy = "employee" ,fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	List <Bill> bills;
-
-	public List<Bill> getBills() {
-		return bills;
+	
+	
+	public int getEmployeeid() {
+		return employeeid;
 	}
-
-	public void setBills(List<Bill> bills) {
-		this.bills = bills;
+	public void setEmployeeid(int employeeid) {
+		this.employeeid = employeeid;
 	}
-
-	public String getDateOfBirth() {
-		return dateOfBirth;
-	}
-
-	public void setDateOfBirth(String dateOfBirth) {
-		dateOfBirth = dateOfBirth;
-	}
-
-	public int getEmployee_id() {
-		return employee_id;
-	}
-
-	public void setEmployee_id(int employee_id) {
-		this.employee_id = employee_id;
-	}
-
 	public String getEmployee_name() {
 		return employee_name;
 	}
-
 	public void setEmployee_name(String employee_name) {
 		this.employee_name = employee_name;
 	}
-
-	public Date getDoj() {
-		return doj;
+	
+	public Date getDateofjoining() {
+		return dateofjoining;
 	}
-
-	public void setDoj(Date doj) {
-		this.doj = doj;
+	public void setDateofjoining(Date dateofjoining) {
+		this.dateofjoining = dateofjoining;
 	}
-
 	public int getSalary() {
 		return salary;
 	}
-
+	
 	public void setSalary(int salary) {
 		this.salary = salary;
 	}
-
 	public String getDesignation() {
 		return designation;
 	}
-
 	public void setDesignation(String designation) {
 		this.designation = designation;
 	}
-
 	public String getMobile_number() {
 		return mobile_number;
 	}
-
 	public void setMobile_number(String mobile_number) {
 		this.mobile_number = mobile_number;
 	}
@@ -102,9 +69,19 @@ public class Employee {
 	public String getAddress() {
 		return address;
 	}
-
 	public void setAddress(String address) {
 		this.address = address;
 	}
+	public String getDateOfBirth() {
+		return dateOfBirth;
+	}
+	public void setDateOfBirth(String dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+	
+	//@OneToMany(mappedBy = "employee" ,fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	//List <Bill> bills;
 
+
+	
 }

@@ -22,9 +22,7 @@
 					Store <span>Management</span>
 				</div>
 				<ul>
-				<b style="color: white">Welcome ${sess}</b> &#128525
-					<li><a href="#"><i class="fas fa-search"></i></a></li>
-					<li><a href="#"><i class="fas fa-bell"></i></a></li>
+				<b style="color: white">Welcome ${sess}</b> 
 					<li><a href="/logout"><i class="fas fa-power-off"></i></a></li>
 				</ul>
 			</div>
@@ -37,8 +35,8 @@
 					<br>
 				</center>
 				
-				<li class="item"><a href="/HomePage" class="menu-btn"> <i
-						class="fas fa-desktop"></i><span>Dashboard</span>
+				<li class="item"><a href="/AdminHomepage" class="menu-btn"> <i
+						class="fas fa-desktop"></i><span>Home</span>
 				</a></li>
 				<li class="item"><a href="/employee" class="menu-btn"> <i
 						class="fa fa-building"></i><span>Add Employee</span>

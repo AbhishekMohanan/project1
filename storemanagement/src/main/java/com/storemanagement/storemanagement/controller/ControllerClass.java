@@ -49,10 +49,10 @@ public class ControllerClass {
 		Optional<User> bean = userRepository.findByUserName(authentication.getName());
 		String rol = bean.get().getRoles();
 		if (rol.equals("ROLE_ADMIN")) {
-			return ("AdminDashboard");
+			return ("AdminHomepage");
 		}
 
-		return "Dashboard";
+		return "HomePage";
 	}
 
 	@RequestMapping("/Dashboard")
@@ -64,6 +64,12 @@ public class ControllerClass {
 	public String homepage() {
 		return "HomePage";
 	}
+	
+	@RequestMapping("/AdminHomepage")
+	public String adminhomepage() {
+		return "AdminHomepage";
+	}
+
 
 	@RequestMapping("/ViewSupplierDetails")
 	public String viewPage(Model model) {
@@ -98,9 +104,9 @@ public class ControllerClass {
 		model.addAttribute("Editdetails", supplier);
 		return "SupplierEditPage";
 	}
-//	@PostMapping("/updated")
-//    public String update(@ModelAttribute("supplierdetails")Supplier supplier) {
-//	serviceClass.update(supplier.getSupplierId(), supplier.getSupplierName(),supplier.getMobileNo());
-//		return "redirect:/ViewSupplierDetails";	}
+	@PostMapping("/updated")
+  public String update(@ModelAttribute("supplierdetails")Supplier supplier) {
+serviceClass.update(supplier.getSupplierId(), supplier.getSupplierName(),supplier.getMobileNo());
+	return "redirect:/ViewSupplierDetails";	}
 
 }
