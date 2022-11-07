@@ -41,7 +41,9 @@
 				<li class="item"><a href="/employee" class="menu-btn"> <i
 						class="fa fa-building"></i><span>Add Employee</span>
 				</a></li>
-				
+				<li class="item"><a href="/adduser" class="menu-btn"> <i
+						class="fa fa-building"></i><span>User Access</span>
+				</a></li>
 					
 			</div>
 		</div>

@@ -13,6 +13,16 @@
 	charset="utf-8"></script>
 </head>
 <body>
+
+<div class="header">
+			<div class="header-menu">
+				<div>
+				<b style="color:white">Hi ${sess} &#128525</b> 
+				</div>
+				<div>
+				<marquee class="blink">
+		<h3 align="center" style="color:white">MARVEL STORE-7th Anand Street,Pondicherry-600600.</h3>
+	</marquee></div>
 	<!--wrapper start-->
 	<div class="wrapper">
 		<!--header menu start-->
