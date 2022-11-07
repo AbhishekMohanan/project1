@@ -1,12 +1,36 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="value"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="LoginStyle/css/bill.css" />
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <title>Billing</title>
+<script type="text/javascript">
+
+function record(){
+	alert("Hello");
+	var x = document.getElementById("select").value;
+	$.ajax({
+	       type : "GET",
+	       contentType : "plain/text",
+	       url : "/add",
+	       dataType : 'json',
+	       data : "name="+x,
+	       success : function(data) {
+               alert("Added");
+           },
+	       error : function(e) {
+	        alert(e);
+	       }
+	 });
+}
+
+</script>
+
+</head>
 <div class="container">
 	<div class="row gutters">
 		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -72,14 +96,17 @@
 												<b style="color: black">Sales Dashboard</b> <br>
 												<hr class="style7">
 
-												<b style="color: black">Products</b> <select name="" id="">
+												<b style="color: black" >Products</b> 
+												<select onchange="record()" name="" id="select">
 													<value:forEach var="product" items="${productdetails}">
-														<option>${product.getProduct_name()}</option>
+														<option >${product.getProduct_name()}</option>
 													</value:forEach>
-													
-												</select>&nbsp; &nbsp; &nbsp; <b style="color: black">Quantity</b> <input
+												</select>
+												&nbsp; &nbsp; &nbsp; 
+												<b style="color: black">Quantity</b> 
+												<input
 													class="input100" type="number" name="qty"
-													placeholder="Choose Quantity"> &nbsp; &nbsp;
+													placeholder="Choose Quantity"/> &nbsp; &nbsp;
 												<button class="button button2">Add Item</button>
 
 
@@ -145,3 +172,4 @@
 	</div>
 </div>
 </div>
+<span class="btn btn-primary" onclick="Record()">click</span>

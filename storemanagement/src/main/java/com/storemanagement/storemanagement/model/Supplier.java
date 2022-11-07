@@ -15,14 +15,8 @@ import javax.validation.constraints.NotBlank;
 public class Supplier {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "supplier_id")	
 	private int supplierId;
-	
-	@NotBlank(message = "Name is mandatory")
-	@Column(name="supplier_name ")
 	private String supplierName;
-	
-	@Column(name="mobile_no ")
 	private String mobileNo;
 	
 	public int getSupplierId() {

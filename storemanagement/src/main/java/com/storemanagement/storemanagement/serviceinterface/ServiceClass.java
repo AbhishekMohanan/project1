@@ -16,7 +16,7 @@ public interface ServiceClass {
 
 	Supplier editSupplier(int supplierId);
 	
-	int update (int supplierId , String supplierName, String mobileNo );
+//	int update (int supplierId , String supplierName, String mobileNo );
 	
 	
 

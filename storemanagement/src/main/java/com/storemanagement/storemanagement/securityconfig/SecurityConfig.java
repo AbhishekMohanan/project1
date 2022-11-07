@@ -12,50 +12,30 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.storemanagement.storemanagement.serviceclass.Userservice;
 
-
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-	    @Autowired
-	    Userservice eservice;
+	@Autowired
+	Userservice eservice;
 
-	    @Override
-	    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-	        auth.userDetailsService(eservice);
-	    }
+	@Override
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		auth.userDetailsService(eservice);
+	}
 
-//	    @Override
-//	    protected void configure(HttpSecurity http) throws Exception {
-//	        http.authorizeRequests()
-//	                .antMatchers("/admin").hasRole("ADMIN")
-//	                .antMatchers("/customer").hasAnyRole("CUSTOMER", "ADMIN")
-//	                .antMatchers("/seller").hasAnyRole("SELLER", "ADMIN")
-//	                .antMatchers("/TVList").hasAnyRole("CUSTOMER", "ADMIN")
-//	                .antMatchers("/").permitAll()
-//	                .and().formLogin().loginPage("/login").permitAll();
-//	
-//	    }
-//	    
-	    
-	    @Override
-		protected void configure(HttpSecurity http) throws Exception {
-			http.authorizeRequests()
-			
-		            .antMatchers("/").hasAnyRole("EMPLOYEE", "ADMIN")
-		            .antMatchers("/seller").hasAnyRole("SELLER", "ADMIN")
-		            .antMatchers("/TVList").hasAnyRole("CUSTOMER", "ADMIN")
-//		            .antMatchers("/").permitAll()
-					.and().formLogin().loginPage("/login").permitAll()
-					.and().logout().permitAll();
-					
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+		http.authorizeRequests()
 
-			http.csrf().disable();
-		}
+				.antMatchers("/").hasAnyRole("EMPLOYEE", "ADMIN").and().formLogin().loginPage("/login").permitAll()
+				.and().logout().permitAll();
 
-	    @Bean
-	    public PasswordEncoder getPasswordEncoder() {
-	        return NoOpPasswordEncoder.getInstance();
-	    }
-	
-	
+		http.csrf().disable();
+	}
+
+	@Bean
+	public PasswordEncoder getPasswordEncoder() {
+		return NoOpPasswordEncoder.getInstance();
+	}
+
 }

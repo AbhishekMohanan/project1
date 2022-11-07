@@ -24,6 +24,7 @@ public class BillDetails {
 	private int quantity;
 	private int amount;
 	private int product_id;
+	private int price;
 	private String category_name;
 	private String companyName;
 	private String product_name;
@@ -70,6 +71,15 @@ public class BillDetails {
 	public void setProduct_name(String product_name) {
 		this.product_name = product_name;
 	}
+	
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	
+	
 	
 	
 

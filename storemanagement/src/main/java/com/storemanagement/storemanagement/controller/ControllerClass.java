@@ -92,21 +92,21 @@ public class ControllerClass {
 		return "redirect:/ViewSupplierDetails";
 	}
 
-	@RequestMapping(value = "/delete/{supplier_id}", method = RequestMethod.GET)
-	public String delete(@PathVariable("supplier_id") int id) {
+	@RequestMapping(value = "/delete/{supplierId}", method = RequestMethod.GET)
+	public String delete(@PathVariable("supplierId") int id) {
 		serviceClass.deleteSupplier(id);
 		return "redirect:/ViewSupplierDetails";
 	}
 
-	@RequestMapping("/e/{supplier_id}")
-	public String edit(@PathVariable("supplier_id") int supplier_id, Model model) {
-		Supplier supplier = serviceClass.editSupplier(supplier_id);
+	@RequestMapping("/e/{supplierId}")
+	public String edit(@PathVariable("supplier_id") int supplierId, Model model) {
+		Supplier supplier = serviceClass.editSupplier(supplierId);
 		model.addAttribute("Editdetails", supplier);
 		return "SupplierEditPage";
 	}
-	@PostMapping("/updated")
-  public String update(@ModelAttribute("supplierdetails")Supplier supplier) {
-serviceClass.update(supplier.getSupplierId(), supplier.getSupplierName(),supplier.getMobileNo());
-	return "redirect:/ViewSupplierDetails";	}
+//	@PostMapping("/updated")
+//  public String update(@ModelAttribute("supplierdetails")Supplier supplier) {
+//serviceClass.update(supplier.getSupplierId(), supplier.getSupplierName(),supplier.getMobileNo());
+//	return "redirect:/ViewSupplierDetails";	}
 
 }
